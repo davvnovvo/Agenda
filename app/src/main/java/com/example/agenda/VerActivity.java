@@ -86,7 +86,7 @@ public class VerActivity extends AppCompatActivity {
                 String num = txtTelefono.getText().toString();
                 Uri number = Uri.parse("tel:" + num);
                 Intent dial = new Intent(Intent.ACTION_DIAL, number);
-                startActivity(dial); // Ejecutamos el Intent
+                startActivity(dial);
 
             }
         });
