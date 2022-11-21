@@ -3,5 +3,4 @@
     <string name="hint_nombre">Nombre:</string>
     <string name="hint_telefono">Teléfono:</string>
     <string name="btn_guarda">Guardar Contacto</string>
-    <string name="menu_nuevo">Nuevo Contacto</string>
 </resources>
