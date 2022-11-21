@@ -62,12 +62,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_principal, menu);
-        return true;
-    }
-
     private void nuevoRegistro() {
         Intent intent = new Intent(MainActivity.this, NuevoActivity.class);
         startActivity(intent);

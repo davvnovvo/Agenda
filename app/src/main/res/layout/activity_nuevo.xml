@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.agenda.NuevoActivity">
+    tools:context="com.example.agenda.NuevoActivity"
+    android:background="@color/sky">
 
     <EditText
         android:id="@+id/txtNombre"
@@ -29,6 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/morado"
+        android:textColor="@color/black"
         android:text="@string/btn_guarda"
         android:textSize="24sp" />
 
