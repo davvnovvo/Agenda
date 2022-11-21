@@ -13,7 +13,8 @@ import android.view.MenuItem;
 import com.adaptadores.ListaContactosAdapter;
 import com.db.DbContactos;
 import com.entidades.Contactos;
-import com.example.agenda.R;
+import com.example.agenda2.R;
+
 
 import java.util.ArrayList;
 

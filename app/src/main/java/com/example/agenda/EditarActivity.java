@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.db.DbContactos;
 import com.entidades.Contactos;
-import com.example.agenda.R;
+import com.example.agenda2.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class EditarActivity extends AppCompatActivity {

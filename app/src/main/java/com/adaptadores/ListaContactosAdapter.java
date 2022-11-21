@@ -11,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.entidades.Contactos;
-import com.example.agenda.R;
 import com.example.agenda.VerActivity;
+import com.example.agenda2.R;
 
 import java.util.ArrayList;
 

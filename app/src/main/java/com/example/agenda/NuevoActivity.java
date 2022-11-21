@@ -9,7 +9,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.db.DbContactos;
-import com.example.agenda.R;
+import com.example.agenda2.R;
+
 
 public class NuevoActivity extends AppCompatActivity {
 
