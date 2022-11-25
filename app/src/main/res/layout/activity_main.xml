@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/sky"
     android:orientation="vertical"
-    tools:context="com.example.agenda.MainActivity"
-    android:background="@color/sky">
+    tools:context="com.example.agenda.MainActivity">
 
     <SearchView
         android:id="@+id/txtBuscar"
