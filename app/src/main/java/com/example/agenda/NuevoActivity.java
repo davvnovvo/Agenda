@@ -17,7 +17,7 @@ public class NuevoActivity extends AppCompatActivity {
 
     EditText txtNombre, txtTelefono;
     Button btnGuarda, btnSorpresa;
-    MediaPlayer mp;
+    MediaPlayer mp, mp2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class NuevoActivity extends AppCompatActivity {
         btnGuarda = findViewById(R.id.btnGuarda);
         btnSorpresa = findViewById(R.id.btnSorpresa);
         mp = MediaPlayer.create(this, R.raw.sorpresa);
+        mp2 = MediaPlayer.create(this, R.raw.tontito);
 
         btnGuarda.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,7 @@ public class NuevoActivity extends AppCompatActivity {
                         Toast.makeText(NuevoActivity.this, "ERROR AL GUARDAR EL CONTACTO", Toast.LENGTH_LONG).show();
                     }
                 } else {
+                    mp2.start();
                     Toast.makeText(NuevoActivity.this, "DEBE COMPLETAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_LONG).show();
                 }
 
