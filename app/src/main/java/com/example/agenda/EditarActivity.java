@@ -20,7 +20,6 @@ public class EditarActivity extends AppCompatActivity {
     Button btnGuarda;
     boolean correcto = false;
     FloatingActionButton fabLlamar, fabBorrar, fabEditar;
-
     Contactos contacto;
     int id = 0;
 
@@ -68,7 +67,7 @@ public class EditarActivity extends AppCompatActivity {
                         Toast.makeText(EditarActivity.this, "CONTACTO MODIFICADO", Toast.LENGTH_LONG).show();
                         verRegistro();
                     } else {
-                        Toast.makeText(EditarActivity.this, "ERROR AL MODIFICAR", Toast.LENGTH_LONG).show();
+                        Toast.makeText(EditarActivity.this, "ERROR AL MODIFICAR EL CONTACTO", Toast.LENGTH_LONG).show();
                     }
                 } else {
                     Toast.makeText(EditarActivity.this, "DEBE COMPLETAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_LONG).show();
