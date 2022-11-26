@@ -3,6 +3,7 @@ package com.example.agenda;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputType;
@@ -22,7 +23,7 @@ public class VerActivity extends AppCompatActivity {
     EditText txtNombre, txtTelefono;
     Button btnGuarda;
     FloatingActionButton fabEditar, fabLlamar, fabBorrrar;
-
+    MediaPlayer mp;
     Contactos contacto;
     int id = 0;
 
@@ -38,6 +39,7 @@ public class VerActivity extends AppCompatActivity {
         fabLlamar = findViewById(R.id.fabLlamar);
         fabBorrrar = findViewById(R.id.fabBorrrar);
         btnGuarda.setVisibility(View.INVISIBLE);
+        mp = MediaPlayer.create(this, R.raw.callate);
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
@@ -72,7 +74,7 @@ public class VerActivity extends AppCompatActivity {
         fabBorrrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mp.start();
                 if (dbContactos.eliminarContacto(id)) {
                     Toast.makeText(VerActivity.this, "CONTACTO BORRADO", Toast.LENGTH_LONG).show();
                     lista();
