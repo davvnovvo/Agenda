@@ -60,18 +60,27 @@ public class EditarActivity extends AppCompatActivity {
         btnGuarda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!txtNombre.getText().toString().equals("") && !txtTelefono.getText().toString().equals("")) {
-                    correcto = dbContactos.editarContacto(id, txtNombre.getText().toString(), txtTelefono.getText().toString());
 
-                    if (correcto == true) {
-                        Toast.makeText(EditarActivity.this, "CONTACTO MODIFICADO", Toast.LENGTH_LONG).show();
-                        verRegistro();
-                    } else {
-                        Toast.makeText(EditarActivity.this, "ERROR AL MODIFICAR EL CONTACTO", Toast.LENGTH_LONG).show();
-                    }
+                if (txtTelefono.getText().toString().length() < 9) {
+                    Toast.makeText(EditarActivity.this, "El TÉLEFONO DEBE TENER 9 CIFRAS", Toast.LENGTH_LONG).show();
+
                 } else {
-                    Toast.makeText(EditarActivity.this, "DEBE COMPLETAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_LONG).show();
+
+                    if (!txtNombre.getText().toString().equals("") && !txtTelefono.getText().toString().equals("")) {
+                        correcto = dbContactos.editarContacto(id, txtNombre.getText().toString(), txtTelefono.getText().toString());
+
+                        if (correcto == true) {
+                            Toast.makeText(EditarActivity.this, "CONTACTO MODIFICADO", Toast.LENGTH_LONG).show();
+                            verRegistro();
+                        } else {
+                            Toast.makeText(EditarActivity.this, "ERROR AL MODIFICAR EL CONTACTO", Toast.LENGTH_LONG).show();
+                        }
+                    } else {
+                        Toast.makeText(EditarActivity.this, "DEBE COMPLETAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_LONG).show();
+                    }
+
                 }
+
             }
         });
 

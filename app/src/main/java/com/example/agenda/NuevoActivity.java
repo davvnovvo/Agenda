@@ -36,21 +36,24 @@ public class NuevoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 DbContactos dbContactos = new DbContactos(NuevoActivity.this);
 
-                if (!txtNombre.getText().toString().equals("") && !txtTelefono.getText().toString().equals("")) {
-                    long id = dbContactos.insertarContacto(txtNombre.getText().toString(), txtTelefono.getText().toString());
+                if (txtTelefono.getText().toString().length() < 9) {
+                    Toast.makeText(NuevoActivity.this, "El TÉLEFONO DEBE TENER 9 CIFRAS", Toast.LENGTH_LONG).show();
 
-                    if (id > 0) {
-                        Toast.makeText(NuevoActivity.this, "CONTACTO GUARDADO", Toast.LENGTH_LONG).show();
-                        limpiar();
-                    } else {
-                        Toast.makeText(NuevoActivity.this, "ERROR AL GUARDAR EL CONTACTO", Toast.LENGTH_LONG).show();
-                    }
                 } else {
-                    mp2.start();
-                    Toast.makeText(NuevoActivity.this, "DEBE COMPLETAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_LONG).show();
+                    if (!txtNombre.getText().toString().equals("") && !txtTelefono.getText().toString().equals("")) {
+                        long id = dbContactos.insertarContacto(txtNombre.getText().toString(), txtTelefono.getText().toString());
+
+                        if (id > 0) {
+                            Toast.makeText(NuevoActivity.this, "CONTACTO GUARDADO", Toast.LENGTH_LONG).show();
+                            limpiar();
+                        } else {
+                            Toast.makeText(NuevoActivity.this, "ERROR AL GUARDAR EL CONTACTO", Toast.LENGTH_LONG).show();
+                        }
+                    } else {
+                        mp2.start();
+                        Toast.makeText(NuevoActivity.this, "DEBE COMPLETAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_LONG).show();
+                    }
                 }
-
-
             }
         });
 
