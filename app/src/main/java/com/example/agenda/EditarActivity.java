@@ -61,12 +61,12 @@ public class EditarActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (txtTelefono.getText().toString().length() < 9) {
-                    Toast.makeText(EditarActivity.this, "El TÉLEFONO DEBE TENER 9 CIFRAS", Toast.LENGTH_LONG).show();
+                if (!txtNombre.getText().toString().equals("") && !txtTelefono.getText().toString().equals("")) {
 
-                } else {
+                    if (txtTelefono.getText().toString().length() < 9 || txtTelefono.getText().toString().length() > 9) {
+                        Toast.makeText(EditarActivity.this, "El TÉLEFONO DEBE TENER 9 CIFRAS", Toast.LENGTH_LONG).show();
+                    } else {
 
-                    if (!txtNombre.getText().toString().equals("") && !txtTelefono.getText().toString().equals("")) {
                         correcto = dbContactos.editarContacto(id, txtNombre.getText().toString(), txtTelefono.getText().toString());
 
                         if (correcto == true) {
@@ -75,12 +75,10 @@ public class EditarActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(EditarActivity.this, "ERROR AL MODIFICAR EL CONTACTO", Toast.LENGTH_LONG).show();
                         }
-                    } else {
-                        Toast.makeText(EditarActivity.this, "DEBE COMPLETAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_LONG).show();
                     }
-
+                } else {
+                    Toast.makeText(EditarActivity.this, "DEBE COMPLETAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_LONG).show();
                 }
-
             }
         });
 
