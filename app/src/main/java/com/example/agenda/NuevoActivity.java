@@ -2,7 +2,6 @@ package com.example.agenda;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,8 +15,7 @@ import com.example.agenda2.R;
 public class NuevoActivity extends AppCompatActivity {
 
     EditText txtNombre, txtTelefono;
-    Button btnGuarda, btnSorpresa;
-    MediaPlayer mp, mp2;
+    Button btnGuarda;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +25,6 @@ public class NuevoActivity extends AppCompatActivity {
         txtNombre = findViewById(R.id.txtNombre);
         txtTelefono = findViewById(R.id.txtTelefono);
         btnGuarda = findViewById(R.id.btnGuarda);
-        btnSorpresa = findViewById(R.id.btnSorpresa);
-        mp = MediaPlayer.create(this, R.raw.sorpresa);
-        mp2 = MediaPlayer.create(this, R.raw.tontito);
 
         btnGuarda.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,21 +47,11 @@ public class NuevoActivity extends AppCompatActivity {
                         }
                     }
                 } else {
-                    mp2.start();
                     Toast.makeText(NuevoActivity.this, "DEBE COMPLETAR LOS CAMPOS OBLIGATORIOS", Toast.LENGTH_LONG).show();
                 }
 
             }
         });
-
-        btnSorpresa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mp.start();
-                Toast.makeText(NuevoActivity.this, "RHLM", Toast.LENGTH_LONG).show();
-            }
-        });
-
     }
 
     private void limpiar() {

@@ -6,14 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+
 import android.view.View;
-import android.widget.Button;
+
 import android.widget.SearchView;
 
 import com.adaptadores.ListaContactosAdapter;
@@ -32,7 +28,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     ArrayList<Contactos> listaArrayContactos;
     ListaContactosAdapter adapter;
     FloatingActionButton fabNuevo;
-    MediaPlayer mp;
     int id = 0;
 
     @SuppressLint("MissingInflatedId")
@@ -55,12 +50,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
         txtBuscar.setOnQueryTextListener(this);
 
-        mp = MediaPlayer.create(this, R.raw.dios);
-
         fabNuevo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mp.start();
                 Intent intent = new Intent(MainActivity.this, NuevoActivity.class);
                 intent.putExtra("ID", id);
                 startActivity(intent);
